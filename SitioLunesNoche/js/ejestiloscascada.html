@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos en Cascada - Herencia</title>
+    <style>
+        div p, div > h2{
+            background-color: aqua;
+        }
+        span > h3{
+            background-color: yellow;
+        }
+        .subtitulo h3, div span h3 {
+            background-color: gray;
+        }
+        span h3:hover{
+            background-color: powderblue;
+            border-radius: 50%;
+            box-shadow:10px 15px 5px red;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            padding:20px;
+            opacity: 0.5;
+            transform: scale(1.5);
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            margin-left: 200px;
+        }
+        img:hover{
+            opacity: 0.5;
+            transform: scale(2);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Estilos en Cascada</h1>
+    <h2>Pseudoelemento</h2>
+    <div>
+        <h2>Herencia</h2>
+        <p>
+            Parrafo 1
+        </p>
+        <div class="subtitulo">
+            <h2>Demostración</h2>
+            <h3>CESDE</h3>
+            <p>
+                Parrafo 2
+            </p>
+            <span>
+                <h3>Cascada</h3>
+            </span>
+        </div>
+        <img src="images/aveo.jpg">
+    </div>
+</body>
+
+</html>

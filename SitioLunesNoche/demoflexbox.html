@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo FlexBox</title>
+    <style>
+        .container{
+            display:flex;
+            /*flex-direction: row;
+            flex-wrap: wrap;*/
+            flex-flow: row wrap;
+        }
+        .hijo{
+            margin-top:10px;
+            background-color: aqua;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-left: 10px;
+            text-align: center;
+            padding:40px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hijo">
+            A
+        </div>
+        <div class="hijo">
+            B
+        </div>
+        <div class="hijo">
+            C
+        </div>
+        <div class="hijo">
+            D
+        </div>
+        <div class="hijo">
+            E
+        </div>
+        <div class="hijo">
+            F
+        </div>
+    </div>
+</body>
+</html>

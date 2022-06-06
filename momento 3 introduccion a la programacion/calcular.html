@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <title>Calculadora</title>
+    <style>
+        body{
+            background-color: #baddf9;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="container-sm" style="border: 1px solid; padding: 30px; box-shadow: 30px  25px #89abc6; background-color: #edffff; margin-top: 100px;">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Valor del Prestamo</label>
+            <input type="number" class="form-control" id="valorPrestamo" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="exampleInputPassword1">
+        </div>
+        <h4>Numero de Cuotas</h4>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cuotas12" value="option1">
+            <label class="form-check-label" for="inlineRadio1">12 Cuotas</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cuotas24" value="option2">
+            <label class="form-check-label" for="inlineRadio2">24 Cuotas</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cuotas36" value="option3">
+            <label class="form-check-label" for="inlineRadio3">36 Cuotas</label>
+        </div>
+        <h4 style="margin-top: 30px;">Tipo Prestamo</h4>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="vivienda" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Vivienda
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="vehiculo">
+            <label class="form-check-label" for="exampleRadios2">
+                Vehiculo
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="libreInversion">
+            <label class="form-check-label" for="exampleRadios3">
+                Libre Inversion
+            </label>
+        </div>
+
+        <div class="form-check form-check-inline" style="margin-top: 30px;">
+            <input class="form-check-input" type="checkbox" id="manejo" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Incluye Cuota de Manejo</label>
+        </div>
+        <h1 style="margin-top: 30px;">Total a Pagar</h1>
+        <span id="totalpagar">
+
+        </span>
+        <h1 style="margin-top: 30px;">Valor de la Cuota</h1>
+        <span id="valorCuota">
+
+        </span>
+        <button id="btncalcular" type="button" class="btn btn-primary" style="display: block; margin-top: 30px;"
+            onclick="calcular()">Calcular</button>
+    </form>
+    <script>
+        var vPrestamo = parseFloat(document.getElementById('valorPrestamo').value);
+
+        function calcular() {
+            let totalpago = 0;
+            let cuota = 0;
+            let nroCuotas = 0;
+            let interes = 0;
+            if (cuotas12.checked) {
+                nroCuotas = 12;
+            }
+            else if (cuotas24.checked) {
+                nroCuotas = 24;
+            }
+            else if (cuotas36.checked) {
+                nroCuotas = 36;
+            }
+            if (vivienda.checked) {
+                interes = 0.01;
+            }
+            else if (vehiculo.checked) {
+                interes = 0.015;
+            }
+            else if (libreInversion.checked) {
+                interes = 0.02;
+            }
+            if(manejo.checked){
+                totalpago = (vPrestamo + (vPrestamo * interes) + (nroCuotas * 8000));
+                cuota = (totalpago/(nroCuotas));
+            }
+            else{
+                totalpago = (vPrestamo + (vPrestamo * interes));
+                cuota = totalpago / nroCuotas;
+            }
+            totalpagar.innerText = totalpago;
+            valorCuota.innerText = cuota;
+        }
+
+    </script>
+</body>
+
+</html>

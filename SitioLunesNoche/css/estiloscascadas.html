@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilos En Cascadas- Herencia</title>
+    <style>
+        div p,
+        div>h2 {
+            background-color: aqua;
+        }
+
+        .subtitulo h3,
+        div span h3 {
+            background-color: gray;
+        }
+
+        span>h3 {
+            background-color: yellow;
+        }
+
+        span h3:hover {
+            background-color: powderblue;
+            border-radius: 50%;
+            box-shadow: 10px 15px 5px red;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            padding: 20px;
+            opacity: 0.1;
+            transform: scale(0.5)
+        }
+
+        img:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Estilos en cascada </h1>
+    <h2>Pseudoelemento</h2>
+    <div>
+        <h2>Herencia</h2>
+        <p>
+            Parrafo 1
+        </p>
+        <div class="subtitulo">
+            <h2>Demostracion</h2>
+            <h3>Cesde </h3>
+            <p>
+                Parrafo 2
+            </p>
+            <span>
+                <h3>Cascada</h3>
+            </span>
+        </div>
+    </div>
+    <img src="images/cats.gif">
+</body>
+
+</html>

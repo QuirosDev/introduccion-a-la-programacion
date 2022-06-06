@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Paisa  - Turismo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h3>Agencia de Turismo</h3>
+    <h5>Arma tu plan</h5>
+    <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" size="25" maxlength="30"
+        required autocomplete="off" pattern="[A-Za-zÑñáéíóúÁÉÍÓÚüÜ ]{2,30}" title="Ingrese su nombre, solo letras y/o espacios"
+        placeholder="Su nombre, por favor"
+        >
+        <span style="color:red">*</span>
+        <br>
+        <label for="email">Correo Electrónico</label>
+        <input type="email" name="email" id="email" placeholder="p.e. jdoe@correo.com" required autocomplete="off" title="Correo Electrónico" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+        <br>
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" required placeholder="Teléfono" pattern="[0-9]{10,10}">
+        <br>
+        <label for="destino">Destino</label>
+        <select name="destino" id="destino">
+            <option value="na" disabled selected>Seleccione un destino</option>
+            <option value="cartagena">Cartagena</option>
+            <option value="santamarta">Santa Marta</option>
+            <option value="sanandres">San Andrés</option>
+            <option value="medellin">Medellín</option>
+        </select>
+        <br>
+        <label for="fechasalida">Fecha de Salida</label>
+        <input type="date" name="fechasalida" id="fechasalida" required>
+        <br>
+        <label for="nrodias">Número de Días</label>
+        <input type="radio" name="nrodias" id="nrodias2" checked>2 
+        <input type="radio" id="nrodias4" name="nrodias">4 
+        <input type="radio" id="nrodias6" name="nrodias">6 
+        <input type="radio" id="nrodias8" name="nrodias">8 
+        <br>
+        <br>
+        <label for="adicionales">Adicionales</label>
+        <br>
+        <input type="checkbox" name="tour" id="tour" checked>Tour por la ciudad <br>
+        <input type="checkbox" name="discotk" id="discotk">Discoteca <br>
+        <input type="checkbox" name="vehiculo" id="vehiculo">Alquiler vehículo <br>
+        <br>
+        <label for="comentarios">Comentarios/sugerencias</label> <br>
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Comentarios ..."></textarea>
+        <br>
+        <br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar Datos</button>
+    </form>
+</body>
+</html>

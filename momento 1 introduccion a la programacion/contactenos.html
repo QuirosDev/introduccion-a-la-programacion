@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=t, initial-scale=1.0">
+    <link rel="icon" href="/imagenes/mail.webp">
+    <title>Contactenos</title>
+</head>
+<body>
+    <header>
+        <img src="/imagenes/Banner5.jpg" alt="" width="100%" height="300">
+    </header>
+    <table align="center" cellspacing = "10" cellpadding = "10" width = "50%" border="1">
+        <tbody>
+            <thead >
+                <td><h1>Deja que nos comuniquemos contigo</h1></td>
+            </thead>
+        </tbody>
+    </table>
+    <table align="center" cellspacing = "10" cellpadding = " 10" width = "50%" >
+        <tbody>
+            <tr>
+                <td><a href="/index.html">Volver al inicio</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <table align="center" cellspacing = "10" cellpadding = "10" width = "50%">
+        <tbody>
+            <form action="">
+                <tr>
+                    <td><label for="">Seleccione su genero: </label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Femenino<input type="radio" name="genero" id="" required></label>
+                        <label for="">Masculino<input type="radio" name="genero" id=""></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Nombre: </label> &nbsp;
+                        <input type="text" name="nombre" id=""  required placeholder="Digite su nombre y apellidos" title="Digite su nombre y apellidos"
+                        pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}+[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}+[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{2,25}"
+                        autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Telefono: </label> &nbsp;
+                        <input type="tel" name="telefono" id="" required placeholder="Digite su numero de telefono"
+                        title="Digite su numero telefonico" pattern="\([0-9]{3}\" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Email: </label> &nbsp; &nbsp; &nbsp;
+                        <input type="email" name="email" id="" required placeholder="example@dominio.com" title="Digite su correo electronico"
+                        pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">
+                            Seleccione su pais de residencia: 
+                        </label>
+                        <select name="" id="" required>
+                            <option value="" selected disabled>Seleccione una opcion</option>
+                            <option value="">Colombia</option>
+                            <option value="">Venezuela</option>
+                            <option value="">Chile</option>
+                            <option value="">Brasil</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="">Dejanos tu comentario, es muy importante para nosotros.</label> 
+                        <textarea required name="" id="" cols="30" rows="10" placeholder="Deja tu comentario..."></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Enviar"> &nbsp; &nbsp; &nbsp;
+                        <input type="reset" value="Reiniciar">
+                    </td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+</body>
+</html>

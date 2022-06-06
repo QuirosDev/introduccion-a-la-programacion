@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Paisa - Turismo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Agencia de Turismo</h3>
+        <h5>Arma tu plan</h5>
+        <form>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" size="25" maxlength="30" required autocomplete="off"
+                pattern="[A-Za-zÑñáéíóúÁÉÍÓÚüÜ ]{2,30}" title="Ingrese su nombre, solo letras y/o espacios"
+                placeholder="Su nombre, por favor" class="form-control">
+            <span style="color:red" id="mensnombre"></span>
+            <br>
+            <label for="email">Correo Electrónico</label>
+            <input type="email" name="email" id="email" placeholder="p.e. jdoe@correo.com" required autocomplete="off"
+                title="Correo Electrónico" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-control">
+                <span style="color:red" id="mensemail"></span>
+            <br>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="Teléfono" pattern="[0-9]{10,10}"
+                class="form-control">
+                <span style="color:red" id="menstelefono"></span>
+            <br>
+            <label for="destino">Destino</label>
+            <select name="destino" id="destino" class="form-control">
+                <option value="na" disabled selected>Seleccione un destino</option>
+                <option value="cartagena">Cartagena</option>
+                <option value="santamarta">Santa Marta</option>
+                <option value="sanandres">San Andrés</option>
+                <option value="medellin">Medellín</option>
+            </select>
+            <span style="color:red" id="mensdestino"></span>
+            <br>
+            <label for="fechasalida">Fecha de Salida</label>
+            <input type="date" name="fechasalida" id="fechasalida" required class="form-control">
+            <span style="color:red" id="mensfechasalida"></span>
+            <br>
+            <label for="nrodias">Número de Días</label>
+            <input type="radio" name="nrodias" id="nrodias2" checked>2
+            <input type="radio" id="nrodias4" name="nrodias">4
+            <input type="radio" id="nrodias6" name="nrodias">6
+            <input type="radio" id="nrodias8" name="nrodias">8
+            <br>
+            <br>
+            <label for="adicionales">Adicionales</label>
+            <br>
+            <input type="checkbox" name="tour" id="tour" checked>Tour por la ciudad <br>
+            <input type="checkbox" name="discotk" id="discotk">Discoteca <br>
+            <input type="checkbox" name="vehiculo" id="vehiculo">Alquiler vehículo <br>
+            <br>
+            <label for="comentarios">Comentarios/sugerencias</label> <br>
+            <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Comentarios ..."
+                class="form-control"></textarea>
+            <br>
+            <br>
+            <label for="">Total a Pagar: </label>
+            <span id="totalpagar">
+
+            </span>
+            <button type="button" class="btn btn-success" id="btncalcular" onclick="calcular()">Calcular</button>
+            <button type="button" class="btn btn-danger" id="btnlipiar">Limpiar Datos</button>
+        </form>
+    </div>
+    <script>
+
+        //console.log("hola mundo desde java Javascript");
+        //definicion de varibles
+        //let nombre ="jhon f kennedy";
+        //salario =3500000;
+        //estado=true;
+        //nro=[3,4,5,6,7];
+        //console.log("nombre:",nombre);
+        // Declarar variables que referencien los IDs de los elementos de HTML
+        let nombre = document.getElementById('nombre');
+        let email = document.getElementById('email');
+        let telefono = document.getElementById('telefono');
+        let destino = document.querySelector('#destino');
+        let fechasalida = document.getElementById('fechasalida');
+        let nrodias = document.getElementById('nrodias');
+        let nrodias2 = document.getElementById('nrodias2');
+        let nrodias4 = document.getElementById('nrodias4');
+        let nrodias6 = document.getElementById('nrodias6');
+        let nrodias8 = document.getElementById('nrodias8');
+        let tour = document.getElementById('tour');
+        let discotk = document.getElementById('discotek');
+        let vehiculo = document.getElementById('vehiculo');
+        let totalpagar = document.getElementById('totalpagar');
+        let btncalcular = document.getElementById('btncalcular');
+        let mensnombre = document.getElementById('mensnombre');
+        let mensemail = document.getElementById('mensemail');
+        let menstelefono = document.getElementById('menstelefono');
+        let mensdestino = document.getElementById('mensdestino');
+        let mensfechasalida = document.getElementById('mensfechasalida');
+        // Eventos en JS
+        nombre.onfocus = () => {
+            mensnombre.innerHTML ="el nombre es obligatorio...";
+        }
+        nombre.onblur = function() {
+            mensnombre.innerHTML = "";
+        }
+
+        email.onfocus = () => {
+            mensemail.innerHTML ="el nombre es obligatorio...";
+        }
+        email.onblur = function() {
+            mensemail.innerHTML = "";
+        }
+        // Evento con AddEventListener
+        telefono.addEventListener('focus', ()=> {
+            menstelefono.innerText = "El telefono es obligatorio";
+        })
+
+        telefono.addEventListener('blur', function(){
+            menstelefono.innerHTML = "";
+        })
+
+        function calcular() {
+            // Validar que se hayan digitado los datos necesarios para calcular (todos)
+            if (nombre.value != "" && destino.value != "" && fechasalida.value != "") {
+                let vlrdestino = 0;
+                switch(destino.value){
+                    case "cartagena": 
+                            vlrdestino = 300000;
+                            break;
+                    case "santamarta":
+                            vlrdestino = 250000;
+                            break;
+                    case "sanandres":
+                            vlrdestino = 200000;
+                            break;
+                    case "medellin":
+                            vlrdestino = 150000;
+                            break; 
+                }
+                // Chequear nro dias
+                let nrodias = 0;
+                if(nrodias2.checked){
+                    nrodias = 2;
+                }
+                if(nrodias4.checked){
+                    nrodias = 4;
+                }
+                if(nrodias6.checked){
+                    nrodias = 6;
+                }
+                if(nrodias8.checked){
+                    nrodias = 8;
+                }
+
+                let mtotalapagar = vlrdestino + (vlrdestino * nrodias);
+                totalpagar.innerText = mtotalapagar;
+
+            }
+            else {
+                alert("Debe ingresar el nombre del usuario")
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>
